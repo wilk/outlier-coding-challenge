@@ -9,4 +9,4 @@ COPY package.json .
 COPY tsconfig.json .
 COPY src .
 RUN npm i
-CMD [ "node", "index.js" ]
+CMD [ "node", "dist/index.js" ]

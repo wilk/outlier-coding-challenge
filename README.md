@@ -37,3 +37,21 @@ If you need to build the container alone, use the following command:
 ```
 $ docker build -t etl:1.0.0 .
 ```
+
+## Deployment on Heroku
+Setup `heroku` first:
+
+```
+$ heroku container:login 
+$ heroku create
+```
+
+Then add the postgres addon on the heroku dashboard and configure the environment variables.
+Now, publish the docker image on the heroku hub and release the container:
+
+```
+$ heroku container:push web
+$ heroku container:release web
+```
+
+The database is now filled with all the CSVs.
